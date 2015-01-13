@@ -1,0 +1,74 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* board_frontdesk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 5.0.6\n"
+"Report-Msgid-Bugs-To: support@openerp.com\n"
+"POT-Creation-Date: 2009-11-26 06:18:01+0000\n"
+"PO-Revision-Date: 2015-01-13 09:26+0100\n"
+"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"X-Generator: Poedit 1.5.4\n"
+
+#. module: board_frontdesk
+#: model:ir.ui.menu,name:board_frontdesk.menu_board_frontdesk
+msgid "Hotel FrontDesk Board"
+msgstr "Hotelempfang Übersicht"
+
+#. module: board_frontdesk
+#: constraint:ir.ui.view:0
+msgid "Invalid XML for View Architecture!"
+msgstr "Ungültiges XML der Sichtdefinition!"
+
+#. module: board_frontdesk
+#: model:ir.actions.act_window,name:board_frontdesk.open_board_frontdesk
+msgid "FrontDesk Dashboard"
+msgstr "Empfangs-Pinnwand"
+
+#. module: board_frontdesk
+#: model:ir.module.module,description:board_frontdesk.module_meta_information
+msgid ""
+"\n"
+"This module implements a dashboard for hotel FrontDesk that includes:\n"
+"    * Calendar view of Today's Check-In and Check-Out\n"
+"    * Calendar view of Weekly Check-In and Check-Out\n"
+"    * Calendar view of Monthly Check-In and Check-Out\n"
+"    "
+msgstr ""
+"\n"
+"Dieses Modul implementiert eine Pinnwand für Hotelempfänge einschließlich:\n"
+"    * Kalender-Sicht der Check-Ins und Check-Outs am heutigen Tag\n"
+"    * Kalender-Sicht der Check-Ins und Check-Outs in der Woche\n"
+"    * Kalender-Sicht der Check-Ins und Check-Outs im Monat\n"
+"    "
+
+#. module: board_frontdesk
+#: constraint:ir.actions.act_window:0
+msgid "Invalid model name in the action definition."
+msgstr "Ungültiger Modellname in der Aktion festgelegt."
+
+#. module: board_frontdesk
+#: model:ir.actions.act_window,name:board_frontdesk.action_view_frontdesk_cal
+msgid "FrontDesk"
+msgstr "Empfang"
+
+#. module: board_frontdesk
+#: view:board.board:0
+msgid "Reservation"
+msgstr "Reservierung"
+
+#. module: board_frontdesk
+#: model:ir.module.module,shortdesc:board_frontdesk.module_meta_information
+msgid "Board for Hotel FrontDesk"
+msgstr "Übersicht für den Hotel-Empfang"
+
+#. module: board_frontdesk
+#: view:board.board:0
+msgid "FrontDesk board"
+msgstr "Empfangsübersicht"
