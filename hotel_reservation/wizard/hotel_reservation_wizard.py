@@ -18,17 +18,18 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-from osv import fields
-from osv import osv
+# from osv import fields
+# from osv import osv
+from openerp.osv import fields, orm
 import time
 from mx import DateTime
 import datetime
 import pooler
 from tools import config
-import wizard
+# from . import wizard
 import netsvc
 
-class hotel_reservation_wizard(osv.osv_memory):
+class hotel_reservation_wizard(orm.TransientModel):
     
     _name = 'hotel.reservation.wizard'
     
@@ -87,7 +88,7 @@ class hotel_reservation_wizard(osv.osv_memory):
       
 hotel_reservation_wizard()
 
-class make_folio_wizard(osv.osv_memory):
+class make_folio_wizard(orm.TransientModel):
     
     _name = 'wizard.make.folio'
     

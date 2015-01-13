@@ -19,30 +19,32 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
+from openerp.osv import fields,orm
+# from osv import osv
+
 import time
 from mx import DateTime
 import netsvc
 import datetime
 import pooler
 from tools import config
+from gdata.exif import Model
 
 
-class product_category(osv.osv):
+class product_category(orm.Model):
     _inherit = "product.category"
     _columns = {
         'ismenutype':fields.boolean('Is Menu Type'),
     }
 product_category()
-class product_product(osv.osv):
+class product_product(orm.Model):
     _inherit = "product.product"
     _columns = {
         'ismenucard':fields.boolean('Is Room'),
         }
 product_product()
 
-class hotel_menucard_type(osv.osv):
+class hotel_menucard_type(orm.Model):
     _name = 'hotel.menucard.type'
     _description = 'amenities Type'
     _inherits = {'product.category':'menu_id'}
@@ -55,7 +57,7 @@ class hotel_menucard_type(osv.osv):
     }
 hotel_menucard_type()
 
-class hotel_menucard(osv.osv):
+class hotel_menucard(orm.Model):
 
     _name = 'hotel.menucard'
     _inherits = {'product.product':'product_id'}
@@ -71,7 +73,7 @@ class hotel_menucard(osv.osv):
 hotel_menucard()
 
 
-class hotel_restaurant_tables(osv.osv):
+class hotel_restaurant_tables(orm.Model):
 
     _name = "hotel.restaurant.tables"
     _description = "Includes Hotel Restaurant Table"
@@ -82,7 +84,7 @@ class hotel_restaurant_tables(osv.osv):
         }
 hotel_restaurant_tables()
 
-class hotel_restaurant_reservation(osv.osv):
+class hotel_restaurant_reservation(orm.Model):
 
     def create_order(self, cr, uid, ids, context=None):
          k = []
@@ -157,7 +159,7 @@ class hotel_restaurant_reservation(osv.osv):
         'start_date':fields.datetime('Start Date', required=True),
         'end_date':fields.datetime('End Date', required=True),
         'cname':fields.many2one('res.partner', 'Customer Name', size=64, required=True),
-        'partner_address_id':fields.many2one('res.partner.address', 'Address'),
+        'partner_address_id':fields.many2one('res.partner', 'Address'),
         'tableno':fields.many2many('hotel.restaurant.tables', 'reservation_table', 'reservation_table_id', 'name', 'Table number'),
         'state' : fields.selection([('draft', 'Draft'), ('confirm', 'Confirmed'), ('done', 'Done'), ('cancel', 'Cancelled')], 'state', select=True, required=True, readonly=True),
         }
@@ -172,7 +174,7 @@ class hotel_restaurant_reservation(osv.osv):
 
 hotel_restaurant_reservation()
 
-class hotel_restaurant_kitchen_order_tickets(osv.osv):
+class hotel_restaurant_kitchen_order_tickets(orm.Model):
     _name = "hotel.restaurant.kitchen.order.tickets"
     _description = "Includes Hotel Restaurant Order"
     _columns = {
@@ -188,7 +190,7 @@ class hotel_restaurant_kitchen_order_tickets(osv.osv):
 
 hotel_restaurant_kitchen_order_tickets()
 
-class hotel_restaurant_order(osv.osv):
+class hotel_restaurant_order(orm.Model):
 
     def _sub_total(self, cr, uid, ids, field_name, arg, context):
         res = {}
@@ -252,7 +254,7 @@ class hotel_restaurant_order(osv.osv):
 
 hotel_restaurant_order()
 
-class hotel_reservation_order(osv.osv):
+class hotel_reservation_order(orm.Model):
 
     def _sub_total(self, cr, uid, ids, field_name, arg, context):
         res = {}
@@ -314,7 +316,7 @@ class hotel_reservation_order(osv.osv):
 
 hotel_reservation_order()
 
-class hotel_restaurant_order_list(osv.osv):
+class hotel_restaurant_order_list(orm.Model):
 
     def _sub_total(self, cr, uid, ids, field_name, arg, context):
         res = {}

@@ -19,11 +19,11 @@
 #
 ##############################################################################
 
-from osv import fields,osv
+from openerp.osv import fields,orm
 import time
 import netsvc
 
-class product_category(osv.osv):
+class product_category(orm.Model):
     _inherit = "product.category"
     _columns = {
         'isactivitytype':fields.boolean('Is Activity Type'),
@@ -33,7 +33,7 @@ class product_category(osv.osv):
     }
 product_category()
 
-class hotel_housekeeping_activity_type(osv.osv):
+class hotel_housekeeping_activity_type(orm.Model):
     _name = 'hotel.housekeeping.activity.type'
     _description = 'Activity Type'
     _inherits = {'product.category':'activity_id'}
@@ -44,14 +44,14 @@ class hotel_housekeeping_activity_type(osv.osv):
     
 hotel_housekeeping_activity_type()
 
-class product_product(osv.osv):
+class product_product(orm.Model):
     _inherit = "product.product"
     _columns = {
         'isact':fields.boolean('Is Activity'),
     }
 product_product()
 
-class h_activity(osv.osv):
+class h_activity(orm.Model):
     _name = 'h.activity'
     _inherits = {'product.product':'h_id'}
     _description = 'Housekeeping Activity'
@@ -62,7 +62,7 @@ class h_activity(osv.osv):
 h_activity()
 
 
-class hotel_housekeeping(osv.osv):
+class hotel_housekeeping(orm.Model):
     _name = "hotel.housekeeping"
     _description = "Reservation"
     
@@ -118,7 +118,7 @@ class hotel_housekeeping(osv.osv):
    
 hotel_housekeeping()  
 
-class hotel_housekeeping_activities(osv.osv):
+class hotel_housekeeping_activities(orm.Model):
     _name = "hotel.housekeeping.activities"
     _description = "Housekeeping Activities "
     _columns = {

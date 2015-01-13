@@ -19,8 +19,9 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
+# from osv import fields
+# from osv import osv
+from openerp.osv import fields, orm
 import time
 from mx import DateTime
 import datetime
@@ -28,7 +29,7 @@ import pooler
 from tools import config
 
 
-class hotel_reservation(osv.osv):
+class hotel_reservation(orm.Model):
     _name = "hotel.reservation"
     _rec_name = "reservation_no"
     _description = "Reservation"
@@ -39,9 +40,9 @@ class hotel_reservation(osv.osv):
                 'shop_id':fields.many2one('sale.shop', 'Shop', required=True, readonly=True, states={'draft':[('readonly',False)]}),      
                 'partner_id':fields.many2one('res.partner', 'Guest Name', required=True,readonly=True, states={'draft':[('readonly',False)]}),
                 'pricelist_id':fields.many2one('product.pricelist', 'Pricelist', required=True,readonly=True, states={'draft':[('readonly',False)]}),
-                'partner_invoice_id':fields.many2one('res.partner.address', 'Invoice Address', readonly=True, required=True, states={'draft':[('readonly',False)]}),
-                'partner_order_id':fields.many2one('res.partner.address', 'Ordering Contact', readonly=True, required=True, states={'draft':[('readonly',False)]}, help="The name and address of the contact that requested the order or quotation."),
-                'partner_shipping_id':fields.many2one('res.partner.address', 'Shipping Address', readonly=True, required=True, states={'draft':[('readonly',False)]}),
+                'partner_invoice_id':fields.many2one('res.partner', 'Invoice Address', readonly=True, required=True, states={'draft':[('readonly',False)]}),
+                'partner_order_id':fields.many2one('res.partner', 'Ordering Contact', readonly=True, required=True, states={'draft':[('readonly',False)]}, help="The name and address of the contact that requested the order or quotation."),
+                'partner_shipping_id':fields.many2one('res.partner', 'Shipping Address', readonly=True, required=True, states={'draft':[('readonly',False)]}),
                 'checkin': fields.datetime('Expected-Date-Arrival',required=True,readonly=True, states={'draft':[('readonly',False)]}),
                 'checkout': fields.datetime('Expected-Date-Departure',required=True, readonly=True, states={'draft':[('readonly',False)]}),
                 'adults':fields.integer('Adults',size=64,readonly=True, states={'draft':[('readonly',False)]}),
@@ -129,7 +130,7 @@ class hotel_reservation(osv.osv):
         return True
 hotel_reservation()
 
-class hotel_reservation_line(osv.osv):
+class hotel_reservation_line(orm.Model):
      _name = "hotel_reservation.line"
    
      _description = "Reservation Line"

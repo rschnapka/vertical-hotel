@@ -18,15 +18,17 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.     
 #
 ##############################################################################
-from osv import fields, osv
+# from osv import fields, osv
+from openerp.osv import fields, orm
 import time
 import netsvc
 #import ir
 from mx import DateTime
 import datetime
 from tools import config
+from gdata.exif import Model
 
-class hotel_floor(osv.osv):
+class hotel_floor(orm.Model):
     _name = "hotel.floor"
     _description = "Floor"
     _columns = { 
@@ -35,7 +37,7 @@ class hotel_floor(osv.osv):
         }    
 hotel_floor()
 
-class product_category(osv.osv):
+class product_category(orm.Model):
     _inherit = "product.category"
     _columns = {
         'isroomtype':fields.boolean('Is Room Type'),
@@ -44,7 +46,7 @@ class product_category(osv.osv):
     }
 product_category()
 
-class hotel_room_type(osv.osv):
+class hotel_room_type(orm.Model):
     _name = "hotel.room_type"
     _inherits = {'product.category':'cat_id'}
     _description = "Room Type"
@@ -58,7 +60,7 @@ class hotel_room_type(osv.osv):
 hotel_room_type()
 
 
-class product_product(osv.osv):
+class product_product(orm.Model):
     _inherit = "product.product"
     _columns = {
         'isroom':fields.boolean('Is Room'),
@@ -68,7 +70,7 @@ class product_product(osv.osv):
     }
 product_product()
 
-class hotel_room_amenities_type(osv.osv):
+class hotel_room_amenities_type(orm.Model):
     _name = 'hotel.room_amenities_type'
     _description = 'amenities Type'
     _inherits = {'product.category':'cat_id'}
@@ -82,7 +84,7 @@ class hotel_room_amenities_type(osv.osv):
 
 hotel_room_amenities_type()
 
-class hotel_room_amenities(osv.osv):
+class hotel_room_amenities(orm.Model):
     _name = 'hotel.room_amenities'
     _description = 'Room amenities'
     _inherits = {'product.product':'room_categ_id'}
@@ -97,7 +99,7 @@ class hotel_room_amenities(osv.osv):
         
 hotel_room_amenities()
 
-class hotel_room(osv.osv):
+class hotel_room(orm.Model):
   
     _name = 'hotel.room'
     _inherits = {'product.product':'product_id'}
@@ -118,7 +120,7 @@ class hotel_room(osv.osv):
 
 hotel_room()
 
-class hotel_folio(osv.osv):
+class hotel_folio(orm.Model):
     
     def _incoterm_get(self, cr, uid, context={}):
         return  self.pool.get('sale.order')._incoterm_get(cr, uid, context={})
@@ -300,7 +302,7 @@ class hotel_folio(osv.osv):
   
 hotel_folio()
 
-class hotel_folio_line(osv.osv):
+class hotel_folio_line(orm.Model):
     
     def copy(self, cr, uid, id, default=None, context={}):
         return  self.pool.get('sale.order.line').copy(cr, uid, id, default=None, context={})
@@ -394,7 +396,7 @@ class hotel_folio_line(osv.osv):
 
 hotel_folio_line()
 
-class hotel_service_line(osv.osv):
+class hotel_service_line(orm.Model):
     
     def copy(self, cr, uid, id, default=None, context={}):
         return  self.pool.get('sale.order.line').copy(cr, uid, id, default=None, context={})
@@ -464,7 +466,7 @@ class hotel_service_line(osv.osv):
 
 hotel_service_line()
 
-class hotel_service_type(osv.osv):
+class hotel_service_type(orm.Model):
     _name = "hotel.service_type"
     _inherits = {'product.category':'ser_id'}
     _description = "Service Type"
@@ -477,7 +479,7 @@ class hotel_service_type(osv.osv):
     }    
 hotel_service_type()
 
-class hotel_services(osv.osv):
+class hotel_services(orm.Model):
     
     _name = 'hotel.services'
     _description = 'Hotel Services and its charges'

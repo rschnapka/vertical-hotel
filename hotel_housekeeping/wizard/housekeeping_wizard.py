@@ -21,16 +21,17 @@
 #
 ##############################################################################
 
-import wizard
-from osv import osv, fields
+from openerp.osv import orm, fields
+# from . import wizard
 
-class hotel_housekeeping_wizard(osv.osv_memory):
+class hotel_housekeeping_wizard(orm.TransientModel):
     _name = 'hotel.housekeeping.wizard'
-    
+
+    _rec_name = 'hk_start'    
     _columns = {
-        'date_start' :fields.date('Start Date',required=True),
+        'date_start': fields.date('Start Date',required=True),
         'date_end': fields.date('End Date',required=True),
-        'room_no':fields.many2one('hotel.room', 'Room No.', required=True),
+        'room_no':fields.many2one('hotel.room', 'Room No.', required=True)
     }
     
     def print_report(self,cr,uid,ids,context=None):
@@ -42,7 +43,7 @@ class hotel_housekeeping_wizard(osv.osv_memory):
         return {
             'type': 'ir.actions.report.xml',
             'report_name': 'activity.detail',
-            'datas': datas,
+            'datas': datas
         }        
     
 hotel_housekeeping_wizard()

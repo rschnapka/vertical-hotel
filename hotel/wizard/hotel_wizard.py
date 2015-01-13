@@ -19,9 +19,10 @@
 #
 ##############################################################################
 
-from osv import osv,fields
+#from osv import osv,fields
+from openerp.osv import fields, orm
 
-class folio_report_wizard(osv.osv_memory):
+class folio_report_wizard(orm.TransientModel):
     
     _name = 'folio.report.wizard'
     

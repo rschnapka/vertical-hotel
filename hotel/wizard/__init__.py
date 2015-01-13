@@ -19,6 +19,6 @@
 #
 ##############################################################################
 
-import hotel_wizard
+from . import hotel_wizard
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

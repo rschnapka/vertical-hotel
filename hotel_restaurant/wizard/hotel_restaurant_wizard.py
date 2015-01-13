@@ -19,8 +19,9 @@
 #
 ##############################################################################
 
-from osv import fields
-from osv import osv
+# from osv import fields
+# from osv import osv
+from openerp.osv import fields,orm
 import time
 from mx import DateTime
 import datetime
