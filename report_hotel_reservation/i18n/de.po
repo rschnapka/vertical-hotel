@@ -29,10 +29,8 @@ msgstr "Gastname"
 
 #. module: hotel_reservation
 #: constraint:ir.model:0
-msgid ""
-"The Object name must start with x_ and not contain any special character !"
-msgstr ""
-"Der Objektname muss mit x_ beginnen und darf keine Sonderzeichen enthalten!"
+msgid "The Object name must start with x_ and not contain any special character !"
+msgstr "Der Objektname muss mit x_ beginnen und darf keine Sonderzeichen enthalten!"
 
 #. module: hotel_reservation
 #: model:ir.actions.act_window,name:hotel_reservation.action_hotel_reservation_tree_draft
@@ -320,8 +318,7 @@ msgstr "Erledigt"
 
 #. module: hotel_reservation
 #: help:hotel.reservation,partner_order_id:0
-msgid ""
-"The name and address of the contact that requested the order or quotation."
+msgid "The name and address of the contact that requested the order or quotation."
 msgstr "Der Name und Anschrift des Anfragenden oder Bestellenden."
 
 #. module: hotel_reservation
