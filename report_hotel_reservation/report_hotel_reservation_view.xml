@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-<data>
+    <data>
 
 	<!--
 	 State By Reservation
@@ -9,7 +9,6 @@
 	<record model="ir.ui.view" id="view_hotel_reservation_status_tree">
 		<field name="name">report.hotel.reservation.status.tree</field>
 		<field name="model">report.hotel.reservation.status</field>
-		<field name="type">tree</field>
 		<field name="arch" type="xml">
 			<tree string="States By Reservation">
 				<field name="reservation_no"/>
@@ -20,7 +19,6 @@
 	<record model="ir.ui.view" id="view_hotel_reservation_status_form">
 		<field name="name">report.hotel.reservation.status.form</field>
 		<field name="model">report.hotel.reservation.status</field>
-		<field name="type">form</field>
 		<field name="arch" type="xml">
 			<form string="States By Reservation">
 				<field name="reservation_no"/>
@@ -32,7 +30,6 @@
 	<record model="ir.ui.view" id="view_hotel_reservation_status_graph">
 		<field name="name">report.hotel.reservation.status.graph</field>
 		<field name="model">report.hotel.reservation.status</field>
-		<field name="type">graph</field>
 		<field name="arch" type="xml">
 			<graph string="States By Reservation" type="pie">
 				<field name="state"/>
@@ -45,7 +42,6 @@
 	<record model="ir.ui.view" id="view_hotel_reservation_status_graph_bar">
 		<field name="name">report.hotel.reservation.status.graph</field>
 		<field name="model">report.hotel.reservation.status</field>
-		<field name="type">graph</field>
 		<field name="arch" type="xml">
 			<graph string="States By Reservation" type="bar" orientation="verticle">
 				<field name="state"/>
@@ -78,5 +74,5 @@
 		          id="menu_hotel_reservation_status_tree_graph_bar"
 		          sequence="34"
 		          parent = "menu_hotel_reservation_this_month"/>
-</data>
+    </data>
 </openerp>
