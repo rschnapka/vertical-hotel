@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: OpenERP Server 5.0.6\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
 "POT-Creation-Date: 2009-11-26 07:33:36+0000\n"
-"PO-Revision-Date: 2015-01-13 10:12+0100\n"
+"PO-Revision-Date: 2015-01-16 15:01+0100\n"
 "Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Ungültiger Modellname in der Aktion festgelegt."
 #. module: hotel
 #: field:hotel.floor,name:0
 msgid "Floor Name"
-msgstr "Geschossname"
+msgstr "Etagenname"
 
 #. module: hotel
 #: field:product.product,iscategid:0
@@ -488,7 +488,7 @@ msgstr "Variabel"
 #. module: hotel
 #: field:hotel.room,floor_id:0
 msgid "Floor No"
-msgstr "Geschossnr."
+msgstr "Etagennr."
 
 #. module: hotel
 #: view:hotel.services:0
@@ -510,7 +510,7 @@ msgstr "Verlauf"
 #. module: hotel
 #: model:ir.actions.act_window,name:hotel.open_hotel_floor_form_tree
 msgid "Floor Structure"
-msgstr "Geschossaufbau"
+msgstr "Etagenaufbau"
 
 #. module: hotel
 #: rml:folio.total:0
@@ -569,7 +569,7 @@ msgstr "Hotel Folio1"
 #: view:hotel.room:0 model:ir.model,name:hotel.model_hotel_floor
 #: model:ir.ui.menu,name:hotel.menu_open_hotel_floor_form_tree
 msgid "Floor"
-msgstr "Geschloss"
+msgstr "Etage"
 
 #. module: hotel
 #: model:product.category,name:hotel.hotel_room_type_0_product_category

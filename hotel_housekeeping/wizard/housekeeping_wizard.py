@@ -22,15 +22,14 @@
 ##############################################################################
 
 from openerp.osv import orm, fields
-# from . import wizard
+# import wizard
 
 class hotel_housekeeping_wizard(orm.TransientModel):
     _name = 'hotel.housekeeping.wizard'
-
-    _rec_name = 'hk_start'    
+    
     _columns = {
-        'date_start': fields.date('Start Date',required=True),
-        'date_end': fields.date('End Date',required=True),
+        'date_start': fields.date('Start Date', required=True),
+        'date_end': fields.date('End Date', required=True),
         'room_no':fields.many2one('hotel.room', 'Room No.', required=True)
     }
     

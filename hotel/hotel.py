@@ -32,7 +32,7 @@ class hotel_floor(orm.Model):
     _name = "hotel.floor"
     _description = "Floor"
     _columns = { 
-        'name': fields.char('Floor Name', size=64, required=True, select=True),
+        'name': fields.char('Floor Name', size=64, required=True, select=True, translated=True),
         'sequence' : fields.integer('Sequence', size=64),
         }    
 hotel_floor()

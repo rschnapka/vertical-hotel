@@ -2,19 +2,21 @@
 # This file contains the translation of the following modules:
 # 	* hotel_restaurant
 #
+# Rudolf Schnapka, 2015.
 msgid ""
 msgstr ""
 "Project-Id-Version: OpenERP Server 5.0.6\n"
 "Report-Msgid-Bugs-To: support@openerp.com\n"
 "POT-Creation-Date: 2009-11-26 07:34:45+0000\n"
-"PO-Revision-Date: 2015-01-13 11:07+0100\n"
-"Last-Translator: Rudolf Schnapka <rs@techno-flex.de>\n"
-"Language-Team: \n"
+"PO-Revision-Date: 2015-01-16 13:41+0100\n"
+"Last-Translator: Rudolf Schnapka\n"
+"Language-Team: German <kde-i18n-doc@kde.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: de\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Lokalize 1.5\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #. module: hotel_restaurant
 #: rml:hotel.bill:0
@@ -29,7 +31,7 @@ msgstr "Ungültiger Modellname in der Aktionsdefinition."
 #. module: hotel_restaurant
 #: rml:hotel.bill:0
 msgid "Room Number :"
-msgstr "Zimmernr.:"
+msgstr "Zimmernummer:"
 
 #. module: hotel_restaurant
 #: rml:hotel.bill:0
@@ -39,7 +41,7 @@ msgstr "Zwischensumme"
 #. module: hotel_restaurant
 #: rml:hotel.bill:0
 msgid "Order Number :"
-msgstr "Bestellnr."
+msgstr "Bestellnummer:"
 
 #. module: hotel_restaurant
 #: model:ir.model,name:hotel_restaurant.model_hotel_restaurant_kitchen_order_tickets
@@ -64,7 +66,7 @@ msgid ""
 msgstr ""
 "\n"
 "Modul für Hotel-/Resort-/Restaurant-Verwaltung. Sie verwalten:\n"
-"    * Liegenschaftseigenschaften\n"
+"    * Liegenschafts-Eigenschaften\n"
 "    * Restaurant-Einstellungen\n"
 "    * Tisch-Reservierungen\n"
 "    * Erzeugen und bearbeiten von Küchen-Belegen\n"
@@ -588,3 +590,4 @@ msgstr "Gesamt"
 #: model:ir.ui.menu,name:hotel_restaurant.menu_open_view_hotel_reservation_order_form_tree
 msgid "Orders"
 msgstr "Bestellungen"
+

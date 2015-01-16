@@ -1,23 +1,24 @@
 <?xml version="1.0" ?>
 <openerp>
-	<data noupdate="1">
+	<data noupdate="0">
 	
 	<!-- Floor	-->
 	
 		<record id="hotel_floor_ground0" model="hotel.floor">
-			<field eval="&quot;Ground&quot;" name="name"/>
-		</record>
+			<field name="name">Ground</field>
+			<field name="sequence" eval="0"/>
+					</record>
 		<record id="hotel_floor_first0" model="hotel.floor">
-			<field eval="&quot;First&quot;" name="name"/>
-			<field eval="1" name="sequence"/>
+			<field name="name">First</field>
+			<field name="sequence" eval="1"/>
 		</record>
 		<record id="hotel_floor_second0" model="hotel.floor">
-			<field eval="&quot;Second&quot;" name="name"/>
-			<field eval="2" name="sequence"/>
+			<field name="name">Second</field>
+			<field name="sequence" eval="2"/>
 		</record>
 		<record id="hotel_floor_third0" model="hotel.floor">
-			<field eval="&quot;Third&quot;" name="name"/>
-			<field eval="3" name="sequence"/>
+			<field name="name">Third</field>
+			<field name="sequence" eval="3"/>
 		</record>
 		
 	<!-- hotel_room_amenities_type	-->

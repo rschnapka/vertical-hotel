@@ -1,22 +1,24 @@
 <?xml version="1.0" ?>
 <openerp>
     <data>
-        <record model="ir.ui.view" id="view_hotel_housekeeping_wizard">
-            <field name="name">hotel.housekeeping.wizard</field>
+        <record model="ir.ui.view" id="hotel_housekeeping_wizard_form_view">
+            <field name="name">hotel.housekeeping.wizard.form</field>
             <field name="model">hotel.housekeeping.wizard</field>
             <field name="arch" type="xml">
-                <form string="form_string" version="7.0">
+                <form string="form_string">
                     <field name="date_start"/>
                     <field name="date_end"/>
                     <field name="room_no"/>
                     <newline/>
-                    <button icon="gtk-cancel" special="cancel" string="Cancel" colspan="2"/>
-                    <button name="print_report" type="object" string="Activity Report" colspan="2" icon="gtk-print"/>
+                    <separator colspan='4'/>
+                    <button icon="gtk-cancel" special="cancel" string="Cancel" colspan='2'/>
+                    <button name='print_report' type='object' string='Activity Report' colspan='2' icon="gtk-print"/>
                 </form>
             </field>
         </record>
         
-        <record id="action_hotel_housekeeping_wizard" model="ir.actions.act_window">
+        <record id="action_hotel_housekeeping_wizard"
+            model="ir.actions.act_window">
             <field name="name">Activity List</field>
             <field name="res_model">hotel.housekeeping.wizard</field>
             <field name="view_type">form</field>
@@ -24,7 +26,9 @@
             <field name="target">new</field>
         </record>
 
-        <menuitem name="Activity Report"  id="wizard_activity_menu" action="action_hotel_housekeeping_wizard" parent="hotel.hotel_report_menu" groups="base.group_no_one" sequence="29" />
+        <menuitem name="Activity Report"  id="wizard_activity_menu"
+            action="action_hotel_housekeeping_wizard"
+            parent="hotel.hotel_report_menu" sequence="29" />
     </data>
 </openerp>
 

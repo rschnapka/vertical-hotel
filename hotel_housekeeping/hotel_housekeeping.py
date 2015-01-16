@@ -57,7 +57,7 @@ class h_activity(orm.Model):
     _description = 'Housekeeping Activity'
 
     _columns = {
-        'h_id': fields.many2one('product.product','Product'),
+        'h_id': fields.many2one('product.product', 'Product')
     }
 h_activity()
 

@@ -27,11 +27,11 @@ from mx import DateTime
 import datetime
 import pooler
 from tools import config
-import wizard
+# import wizard
 import netsvc
 import pooler
 
-class wizard_hotel_restaurant(osv.osv_memory):
+class wizard_hotel_restaurant(orm.TransientModel):
     
     _name = 'wizard.hotel.restaurant'
     
